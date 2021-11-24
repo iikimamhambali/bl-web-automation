@@ -2,9 +2,11 @@ package utilities;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 
 import java.lang.reflect.Method;
 
+@Listeners(utilities.TestListener.class)
 public class BaseTest {
 
     public static ThreadLocal<Config[]> threadLocalConfig = new ThreadLocal<Config[]>();
@@ -27,9 +29,5 @@ public class BaseTest {
                 testConfig.logComment("Browser is closed now.");
             }
         }
-    }
-
-    public static void main(String[] args){
-
     }
 }

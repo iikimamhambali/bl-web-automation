@@ -1,26 +1,17 @@
 package steps;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import object.LoginObject;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import utilities.*;
 
 public class LoginStep extends BaseTest {
 
     WebDriver webDriver = null;
     LoginObject loginObject = null;
-
-    @Before
-    public void beforeAction() {
-        webDriver = new ChromeDriver();
-        loginObject = new LoginObject(webDriver);
-    }
 
     @Given("on the {string}")
     public void onThe(String URL) {
@@ -33,7 +24,6 @@ public class LoginStep extends BaseTest {
         loginObject.clickLoginButton();
         System.out.println("Clicked");
     }
-
 
     @And("input phone number")
     public void inputPhoneNumber() {
@@ -64,19 +54,5 @@ public class LoginStep extends BaseTest {
 
     @Then("show input otp page")
     public void showInputOtpPage() {
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-//        if (webDriver != null){
-//            webDriver.quit();
-//        }
-        Config[] testConfigs = threadLocalConfig.get();
-        for (Config testConfig : testConfigs) {
-            if (testConfig.driver != null) {
-                testConfig.driver.quit();
-                testConfig.logComment("Browser is closed now.");
-            }
-        }
     }
 }

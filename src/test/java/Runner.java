@@ -15,17 +15,17 @@ import utilities.Constant;
 
 public class Runner extends AbstractTestNGCucumberTests {
 
-//    @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful buy now click to Midtrans demo site")
-//    public void testLoginButtonClick(Config testConfig) {
-//        Browser.openBrowserAndNavigateToUrl(testConfig, Constant.URL);
-//
-//        LoginObject loginObject = new LoginObject(testConfig);
-//        loginObject.clickLoginButton();
-//        loginObject.inputPhoneNumber();
-//        loginObject.clickNextButton();
-//
-//        Browser.takeScreenshot(testConfig);
-//    }
+    @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful buy now click to Midtrans demo site")
+    public void testLoginButtonClick(Config testConfig) {
+        Browser.openBrowserAndNavigateToUrl(testConfig, Constant.URL);
+
+        LoginObject loginObject = new LoginObject(testConfig);
+        loginObject.clickLoginButton();
+        loginObject.inputPhoneNumber();
+        loginObject.clickNextButton();
+
+        Browser.takeScreenshot(testConfig);
+    }
 
 
 }

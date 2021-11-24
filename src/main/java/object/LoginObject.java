@@ -33,9 +33,14 @@ public class LoginObject extends BasePage {
     Config testConfig;
     WebDriver webDriver;
 
-    public LoginObject(WebDriver webDriver){
+    public LoginObject(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
         this.webDriver = webDriver;
+    }
+
+    public LoginObject(Config testConfig) {
+        PageFactory.initElements(testConfig.driver, this);
+        this.testConfig = testConfig;
     }
 
     public void openBrowserAndNavigateToUrl(WebDriver driver, String url) {
