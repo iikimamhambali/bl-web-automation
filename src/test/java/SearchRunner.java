@@ -14,7 +14,7 @@ public class SearchRunner extends BaseTest {
         searchObject.recommendedItemClick();
     }
 
-    @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful buy now click to Midtrans demo site")
+    @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful search product")
     public void testSearchProduct(Config testConfig) {
         testSearch(testConfig);
     }

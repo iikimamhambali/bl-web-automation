@@ -11,7 +11,7 @@ public class LoginObject extends BasePage {
     private WebElement loginButton;
 
     @FindBy(css = "#LoginID")
-    private WebElement emailOrPhoneNumberField;
+    private WebElement inputEmailOrPhoneNumber;
 
     @FindBy(css = "#submit_button")
     private WebElement nextButton;
@@ -38,8 +38,8 @@ public class LoginObject extends BasePage {
     }
 
     public void inputPhoneNumber() {
-        WaitHelper.waitForElementToBeClickable(testConfig, emailOrPhoneNumberField, "waiting for field button");
-        enterData(testConfig, emailOrPhoneNumberField, Constant.CREDENTIAL_PHONE_NUMBER, "field is being clicked here");
+        WaitHelper.waitForElementToBeClickable(testConfig, inputEmailOrPhoneNumber, "waiting for field button");
+        enterData(testConfig, inputEmailOrPhoneNumber, Constant.CREDENTIAL_PHONE_NUMBER, "field is being clicked here");
     }
 
     public void clickNextButton() {

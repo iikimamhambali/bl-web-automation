@@ -16,7 +16,7 @@ public class LoginRunner extends BaseTest {
         loginObject.validationOTPSection();
     }
 
-    @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful buy now click to Midtrans demo site")
+    @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful login")
     public void testLoginButtonClick(Config testConfig) {
         testLogin(testConfig);
         Browser.takeScreenshot(testConfig);
