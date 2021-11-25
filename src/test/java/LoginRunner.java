@@ -13,11 +13,12 @@ public class LoginRunner extends BaseTest {
         loginObject.clickLoginButton();
         loginObject.inputPhoneNumber();
         loginObject.clickNextButton();
+        loginObject.validationOTPSection();
     }
 
     @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful buy now click to Midtrans demo site")
     public void testLoginButtonClick(Config testConfig) {
         testLogin(testConfig);
-//        Browser.takeScreenshot(testConfig);
+        Browser.takeScreenshot(testConfig);
     }
 }

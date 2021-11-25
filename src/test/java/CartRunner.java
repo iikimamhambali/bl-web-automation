@@ -8,6 +8,9 @@ public class CartRunner extends BaseTest {
 
     @Test(dataProvider = "getTestConfig", description = "This testcase is verifying successful buy now click to Midtrans demo site")
     public void testAddToCart(Config testConfig) {
+        LoginRunner loginRunner = new LoginRunner();
+        loginRunner.testLogin(testConfig);
+
         SearchRunner searchRunner = new SearchRunner();
         searchRunner.testSearch(testConfig);
 

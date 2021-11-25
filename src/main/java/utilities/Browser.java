@@ -81,8 +81,8 @@ public class Browser {
         // Close the browser incase time taken to load a page exceed 2 min
         Long ObjectWaitTime = Long.parseLong(testConfig.getRunTimeProperty("ObjectWaitTime"));
         driver.manage().timeouts().implicitlyWait(ObjectWaitTime, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(ObjectWaitTime * 5, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(ObjectWaitTime * 5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(ObjectWaitTime * 3, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(ObjectWaitTime * 3, TimeUnit.SECONDS);
         testConfig.driver = driver;
     }
 
